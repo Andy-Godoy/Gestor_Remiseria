@@ -1,0 +1,35 @@
+header{
+    display: inline-flex;
+    align-items: center;
+    background-color: lightgray;
+    margin: 5px;
+    border-radius: 10px;
+    flex: 0 0 40px;
+    color: black;
+    padding: 0px;
+    width: 100%;
+    height: 10%;
+}
+
+header figure{
+    padding: 0 0 0 0px;
+    margin: 0 0 0 0px;
+}
+
+.logo{
+    padding: 0 0 0 0px;
+    margin: 0 0 0 0px;
+    width: 25%;
+}
+
+.forecast{
+    padding: 0 0 0 0px;
+    margin: 0 0 0 0px;
+    width: 50%;
+}
+
+.login-button{
+    padding: 0 0 0 0px;
+    margin: 0 0 0 0px;
+    width: 25%;
+}

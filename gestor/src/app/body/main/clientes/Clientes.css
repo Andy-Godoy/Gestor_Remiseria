@@ -1,0 +1,51 @@
+.search-bar{
+    border-radius: 5px;
+    width: 75%;
+    height: 5%;
+    font-size: large;
+    margin: 5px;
+}
+
+div .form-cliente{
+    padding: 10px;
+    height: 87%;
+    border-color: lightgray;
+}
+
+div .form-cliente .datos input, textarea{
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 0px;
+    margin: 0px;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+div .form-cliente .datos textarea{
+    height:100px;
+}
+.telefonos{
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.datos{
+    padding: 0px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+}
+.acciones{
+    padding: 1%;
+    height: 15%;
+    display: inline-flex;
+}
+
+.acciones button{
+    width: 33%;
+    margin: 25px;
+    border-radius: 10px;
+}

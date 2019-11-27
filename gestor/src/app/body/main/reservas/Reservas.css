@@ -1,0 +1,41 @@
+.reservations{
+    height: 100%;
+    width: 100%;
+}
+
+.reservations div{
+    display: inline-flex;
+    width: 100%;
+}
+
+.reservations div section{
+    width: 50%;
+    padding: 20px;
+    align-items: center;
+}
+
+form {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, textarea, datetime-local {
+    margin: 10px 0;
+    border: 0;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+form input[type=submit] {
+    background-color: lightblue;
+}
+
+form textarea {
+    min-height: 60px;
+    max-height: 100px;
+    resize: vertical;
+}

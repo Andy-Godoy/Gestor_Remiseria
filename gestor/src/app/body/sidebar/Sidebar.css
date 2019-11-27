@@ -1,0 +1,14 @@
+aside{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebutton{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    height: 10%;
+    width: 100%;
+}

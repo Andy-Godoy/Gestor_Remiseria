@@ -1,0 +1,17 @@
+.driver-status{
+    height:50px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.driver-status[status="Disponible"]{
+    background-color: lightgreen;
+}
+
+.driver-status[status="En viaje"]{
+    background-color: lightyellow;
+}
+
+.driver-status[status="No disponible"]{
+    background-color: red;
+}
