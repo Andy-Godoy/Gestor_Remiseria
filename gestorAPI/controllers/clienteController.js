@@ -28,4 +28,29 @@ let getClienteByCodigo = (req, res) => {
     });           
 };
 
-module.exports = {getClientes, getClienteByCodigo};
+let postClientes = async (req, res) => {      
+    var newCliente = Cliente({
+        _id : mongoose.Types.ObjectId(),
+        codigo : req.body.codigo,
+        apellido : req.body.apellido,
+        nombre : req.body.nombre,
+        direccion : req.body.direccion,
+        entreCalles : req.body.entreCalles,
+        telefono : req.body.telefono,
+        celular : req.body.celular,
+        deuda : 0,
+        observaciones : req.body.observaciones
+    })
+    console.log("guardando " + newCliente)
+    await newCliente.save().
+    then( (newCliente) => {
+            res.status(200).send(newCliente);       
+        },
+        (err) => { 
+            res.status(500).send(err);
+            console.log(err);
+        }
+    );
+};
+
+module.exports = {getClientes, getClienteByCodigo, postClientes};

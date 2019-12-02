@@ -24,20 +24,31 @@ router.get('/leerClientes/:id', function(req,res){
     clienteController.getClienteByCodigo(req,res);
 });
 
+//EndPoint para guardar un cliente
+router.get('/guardarClientes/', function(req,res){
+    clienteController.postClientes(req,res);
+});
+
 
 //EndPoint para leer todos los choferes
 router.get('/leerChoferes', function(req,res){
     choferController.getChoferes(req,res);
 });
 
+//EndPoint para guardar un chofer
+router.get('/guardarChoferes/', function(req,res){
+    clienteController.postchoferes(req,res);
+});
+
+
 //EndPoint para leer todos los reservas
 router.get('/leerReservas', function(req,res){
     reservaController.getReservas(req,res);
 });
 
-//EndPoint para guardar una reserva en la BD
+//EndPoint para guardar una reserva
 router.post('/guardarReserva', function(req,res){
-    reservaController.setReservas(req,res);
+    reservaController.postReservas(req,res);
 });
 
 
@@ -47,7 +58,7 @@ router.get('/leerFeedback', function(req,res){
 });
 
 //EndPoint para grabar un feedback
-router.post('/grabarFeedback', function(req,res){
+router.post('/guardarFeedback', function(req,res){
     feedbackController.postFeedback(req,res);
 });
 

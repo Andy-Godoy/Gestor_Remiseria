@@ -7,7 +7,8 @@ var feedbackSchema = new Schema({
     _id : mongoose.Schema.Types.ObjectId,
     idCliente : mongoose.Schema.Types.ObjectId,
     nombre : String,
-    Fecha : Date,
+    email : String,
+    fecha : Date,
     comentario : String
 });
 

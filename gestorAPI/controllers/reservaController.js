@@ -15,7 +15,7 @@ let getReservas = async (req, res) => {
     });           
 };
 
-let setReservas = async (req, res) => {      
+let postReservas = async (req, res) => {      
     var newReserva = Reservas({
         _id : mongoose.Types.ObjectId(),
         idCliente : req.body.idCliente,
@@ -36,4 +36,4 @@ let setReservas = async (req, res) => {
     );
 };
 
-module.exports = {getReservas, setReservas};
+module.exports = {getReservas, postReservas};

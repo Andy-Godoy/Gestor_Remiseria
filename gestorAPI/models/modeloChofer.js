@@ -9,6 +9,7 @@ var choferSchema = new Schema({
     nombre:String,
     telefono: String,
     celular: String,
+    direccion: String,
     auto: String,
     patente: String,
     seguro: Date,

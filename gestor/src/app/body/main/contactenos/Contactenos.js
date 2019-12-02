@@ -11,6 +11,7 @@ class Contactenos extends React.Component{
             comentario: ""
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event){
@@ -18,6 +19,42 @@ class Contactenos extends React.Component{
         this.setState({
             [name]: value
         })
+    }
+
+    handleSubmit(event){
+        fetch("http://localhost:8080/api/leerClientes/" + this.state.codigo)
+        .then( response => response.json())
+        .then( response => {
+            let data = {
+                idCliente: response._id,
+                nombre: this.state.nombre,
+                email: this.state.email,
+                comentario: this.state.comentario
+            }
+            console.log("guardando " + data)
+            fetch("http://localhost:8080/api/guardarFeedback", {
+                method: 'POST',
+                mode: 'cors',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+            .then( (response) => {
+                console.log("response");
+                console.log(response);
+                return response.json();
+            })
+        })
+        .catch( err => {
+            console.log("No puede generar reserva si no es un cliente.")
+            this.setState(prevState => {
+                return{
+                    codigo: "",
+                    nombre: "",
+                    email: "",
+                    comentario: ""
+                }
+            })
+        });
     }
 
     render(){

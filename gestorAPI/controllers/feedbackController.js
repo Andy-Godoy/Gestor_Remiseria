@@ -15,16 +15,24 @@ let getFeedback = async (req, res) => {
 };
 
 let postFeedback = async (req, res) => {      
-    //Listar resultados
-    let myData = new Feedback(req.body);
-    myData.save()
-        .then(item => {
-            res.status(200).send(myData);
+    var newFeedback = Feedback({
+        _id : mongoose.Types.ObjectId(),
+        idCliente : req.body.idCliente,
+        nombre : req.body.nombre,
+        email: req.body.email,
+        fecha : new Date(),
+        comentario : req.body.comentario
     })
-    .catch(err => {
-        res.status(400).send(err);
-        console.log(err);
-    });
+    console.log("guardando " + newFeedback)
+    await newFeedback.save().
+    then( (newFeedback) => {
+            res.status(200).send(newFeedback); //devuelvo resultado query       
+        },
+        (err) => { 
+            res.status(500).send(err);
+            console.log(err);
+        }
+    );
 };
 
 module.exports = {getFeedback, postFeedback};
